@@ -25,7 +25,7 @@ def index(request):
             if len(prompt)>5000: 
                 prompt = prompt[:5000]
             print(len(prompt))
-            openai.api_key = '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'
+            openai.api_key = 'YOUR_API_HERE'
 
             def generate_response(prompt):
                 model_engine = "text-davinci-003"
