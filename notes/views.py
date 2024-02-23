@@ -25,7 +25,7 @@ def index(request):
             if len(prompt)>5000: 
                 prompt = prompt[:5000]
             print(len(prompt))
-            openai.api_key = 'YOUR_API_HERE'
+            openai.api_key = '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'
 
             def generate_response(prompt):
                 model_engine = "text-davinci-003"
@@ -41,12 +41,13 @@ def index(request):
                 )
 
                 message = completions.choices[0].text
+                print(message.strip())
                 return message.strip()
 
             response = generate_response(prompt)
             return render(request, 'notes/index.html',{'link': response})
        
         except Exception as e:
-            return render(request, 'notes/index.html', {'link': ' Oh no! Error😕. Please try a different video.'})
+            return render(request, 'notes/index.html', {'link': ' Oh no! Error. The API key has been expired😞'})
 
     return render(request, 'notes/index.html')
