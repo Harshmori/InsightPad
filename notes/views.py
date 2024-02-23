@@ -48,6 +48,6 @@ def index(request):
             return render(request, 'notes/index.html',{'link': response})
        
         except Exception as e:
-            return render(request, 'notes/index.html', {'link': ' Oh no! Error. The API key has been expired😞'})
+            return render(request, 'notes/index.html', {'link': ' Oh no! Error. The API key has expired😞'})
 
     return render(request, 'notes/index.html')
